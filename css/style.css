@@ -1,0 +1,710 @@
+/* Importação de uma fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap');
+
+/* Geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #F5F5F5;
+  font-family: Arial, sans-serif;
+  background-color: #0d0d0d;
+}
+
+/* Efeito de sobreposição para melhorar a legibilidade em relação ao video do fundo(pesquisa)
+ ::after - cria um elemento virtual depois do body 
+ content - cria o conteúdo do elemento, obrigatorio quando usar o ::after
+ top 0 e left 0 - ponto inicial da tela
+ o width e o height estão em 100% para cobrir a tela inteira
+ e o z-index define a "camada" do elemento ai o -1 fica atras de tudo  */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(26, 26, 26, 0.93);
+  z-index: -1;
+}
+
+/* Header fixo */
+header {
+  background-color: #111;
+  border-bottom: 3px solid #7ac400;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: bold;
+  font-family: 'Bebas Neue', sans-serif;
+  color: #7ac400;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  font-size: 21px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+/* estilizando a logo */
+.logo-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #7ac400;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 14px 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links .ativo {
+  color: #4CAF1A;
+}
+
+/* Botões */
+.btn {
+  background: #4CAF1A;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+/* Efeito ao passar o mouse no botão mudando a cor */
+.btn:hover {
+  background: #3D9014;
+}
+
+.btn-secundario {
+  color: #ffffff;
+  padding: 12px 25px;
+  border: 1px solid #7ac400;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+/* Efeito ao passar o mouse no botão mudando a cor */
+.btn-secundario:hover {
+  background: #7ac400;
+  color: #0d0d0d;
+}
+
+/* Footer fixo */
+footer {
+  margin-top: 60px;
+  background-color: #1d1d1dea;
+  text-align: center;
+  padding: 10px 20px;
+  border-top: 3px solid #7ac400;
+}
+
+.rodape {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.logo-rodape {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  color: #7ac400;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+footer p {
+  color: #aaaaaa;
+  font-size: 14px;
+}
+
+/* Banner com gradiente */
+.banner {
+  background: linear-gradient(90deg, #0d0d0d 0%, #1a2a00 50%, #0d0d0d 100%);
+  border-bottom: 3px solid #7ac400;
+  padding: 48px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilização para a imagem de fundo do banner nas paginas do sobre e serviços */
+.banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.04;
+  z-index: 0;
+}
+
+.banner h2,
+.banner p {
+  position: relative;
+  z-index: 1;
+}
+
+.banner h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  letter-spacing: 3px;
+  color: #ffffff;
+}
+
+.banner h2 span {
+  color: #7ac400;
+}
+
+.banner p {
+  color: #aaaaaa;
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+/* estilização do video de fundo, da pagina inicial */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+
+.home {
+  padding: 90px 24px 300px;
+}
+
+.inicio {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 70px 20px 50px;
+}
+
+.conteudo {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.titulo-bonitinho {
+  display: inline-block;
+  color: #7ac400;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.home h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 64px;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.inicio p {
+  color: #dddddd;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+/* declarando o flex para as seções de serviços, fotos, contato e seção principal */ 
+.botoes,
+.cards-servicos,
+.fotos-sobre,
+.contato-grade,
+.links-sociais,
+.section-principal {
+  display: flex;
+}
+
+.botoes {
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* pagina do contato, links das redes sociais, forms e etc */
+.caixa {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.contato-grade {
+  gap: 80px;
+}
+
+.contato-info {
+  width: 320px;
+}
+
+/* Basicamente o flex: 1 faz com que o conteudo ocupe todo o espaço disponível*/
+.contato-form {
+  flex: 1;
+}
+
+.contato-form h3,
+.redes-sociais h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #7ac400;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.contato-form h3 {
+  font-size: 26px;
+  margin-bottom: 24px;
+}
+
+.redes-sociais {
+  margin-top: 32px;
+}
+
+.redes-sociais h4 {
+  font-size: 20px;
+}
+
+.info-item {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.info-item strong,
+.info-item span,
+.info-item a {
+  display: block;
+  font-size: 14px;
+}
+
+.info-item strong {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.info-item span {
+  color: #aaaaaa;
+}
+
+.info-item a {
+  color: #7ac400;
+  text-decoration: none;
+}
+
+.links-sociais {
+  gap: 12px;
+}
+
+.link-social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  color: #F5F5F5;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Estilização para os icons das redes sociais */
+.link-social svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Efeito ao passar o mouse no botão mudando a cor */
+.link-social:hover {
+  border-color: #7ac400;
+  color: #7ac400;
+}
+
+.campo {
+  margin-bottom: 18px;
+}
+
+.campo label {
+  display: block;
+  font-size: 13px;
+  color: #aaaaaa;
+  margin-bottom: 6px;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  outline: none;
+}
+
+/* Efeito nos inputs, textarea e select, como se fosse um :hover pra eles(inputs, textarea e select) */
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+  border-color: #7ac400;
+}
+
+.contato-form button {
+  width: 100%;
+  background: #7ac400;
+  color: #0d0d0d;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Efeito ao passar o mouse no botão mudando a cor */
+.contato-form button:hover {
+  background: #5a9200;
+}
+
+/* estilização para o mapa */
+.mapa {
+  margin-top: 48px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 280px;
+  border: none;
+}
+
+/* pagina do sobre */
+.section-principal {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 24px;
+  align-items: center;
+  gap: 50px;
+}
+
+/* Basicamente o flex: 1 faz com que o conteúdo ocupe todo o espaço disponível */
+.texto-sobre {
+  flex: 1;
+}
+
+.texto-sobre h2,
+.section-fotos h2,
+.titulo,
+.card-servico h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #7ac400;
+  letter-spacing: 2px;
+}
+
+.texto-sobre h2,
+.section-fotos h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.texto-sobre h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: #7ac400;
+  letter-spacing: 1px;
+  margin: 24px 0 12px;
+}
+
+.texto-sobre p,
+.texto-sobre ul,
+.card-servico p {
+  color: #cccccc;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.texto-sobre ul {
+  margin-left: 18px;
+}
+
+.texto-sobre li {
+  margin-bottom: 8px;
+}
+
+.logo-card,
+.foto-quadra,
+.card-servico {
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+}
+
+.logo-card {
+  width: 320px;
+  padding: 18px;
+}
+
+.logo-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.section-fotos,
+.section-servicos {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.section-fotos p {
+  color: #aaaaaa;
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+.fotos-sobre {
+  gap: 20px;
+  justify-content: center;
+}
+
+.foto-quadra {
+  width: 100%;
+}
+
+.foto-quadra img {
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.foto-quadra p {
+  color: #cccccc;
+  font-size: 14px;
+  padding: 12px;
+  margin: 0;
+}
+
+/* pagina dos serviços */
+.titulo {
+  font-size: 32px;
+  margin: 20px 0 24px;
+}
+
+.cards-servicos {
+  justify-content: center;
+  gap: 24px;
+  margin-top: 35px;
+}
+
+.card-servico {
+  padding: 24px;
+  width: 300px;
+}
+
+.card-servico h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.card-servico .preco {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.card-servico span {
+  display: block;
+  color: #7ac400;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+
+.card-servico .btn {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+/* Parte responsiva para o mobile */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 12px 20px;
+  }
+
+  .nav-links {
+    gap: 14px;
+    padding-top: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .banner {
+    padding: 38px 18px;
+  }
+
+  .banner h2 {
+    font-size: 38px;
+  }
+
+  .home {
+    padding: 50px 20px 180px;
+  }
+
+  .inicio {
+    padding: 50px 0;
+  }
+
+  .home h1 {
+    font-size: 44px;
+  }
+
+  .inicio p {
+    font-size: 16px;
+  }
+
+  .section-principal,
+  .contato-grade,
+  .cards-servicos,
+  .fotos-sobre {
+    flex-direction: column;
+  }
+
+  .contato-grade {
+    gap: 40px;
+  }
+
+  .logo-card,
+  .contato-info,
+  .card-servico,
+  .foto-quadra {
+    width: 100%;
+  }
+
+  .foto-quadra img {
+    height: 260px;
+  }
+
+  .links-sociais {
+    flex-direction: column;
+  }
+
+  .link-social {
+    justify-content: center;
+  }
+
+  footer {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 19px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .banner h2 {
+    font-size: 32px;
+  }
+
+  .tagline {
+    font-size: 13px;
+  }
+
+  .home h1 {
+    font-size: 38px;
+  }
+
+  .btn,
+  .btn-secundario {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .texto-sobre h2,
+  .section-fotos h2,
+  .titulo {
+    font-size: 30px;
+  }
+
+  .card-servico h2 {
+    font-size: 28px;
+  }
+
+  .foto-quadra img {
+    height: 220px;
+  }
+
+  .caixa,
+  .section-principal,
+  .section-fotos,
+  .section-servicos {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
